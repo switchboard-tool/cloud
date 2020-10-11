@@ -48,7 +48,7 @@ export class AppContentComponent extends HTMLElement {
             : ""}
           ${this.authService.authStateSubject.value === "signed-out"
             ? html` <div class="app-content__sign-in">
-                <p>Sign in with your Microsoft work account to view all available environments.</p>
+                <p>Sign in with Microsoft work account to view environments.</p>
                 <button class="btn btn--primary btn--w120" @click=${this.authService.signIn}>Sign in</button>
               </div>`
             : ""}
