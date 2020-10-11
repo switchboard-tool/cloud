@@ -30,15 +30,41 @@ export class EnvironmentListComponent extends HTMLElement {
                     <a class="environment-url" href=${e.url}>${e.url}</a>
                   </div>
                   <div class="form-row">
-                    <label for=${`username-${e.appId}`}>Username</label>
-                    <input id=${`username-${e.appId}`} type="text" readonly value=${e.username} />
-                    <button data-copy-button @click=${(evt: InputEvent) => this.handleCopyFromInput(`username-${e.appId}`, evt)}>Copy</button>
+                    <label class="label" for=${`username-${e.appId}`}>Username</label>
+                    <input
+                      class="input input--copy-target"
+                      id=${`username-${e.appId}`}
+                      type="text"
+                      readonly
+                      value=${e.username}
+                      @click=${() => this.handleCopy(`username-${e.appId}`)}
+                    />
+                    <button
+                      class="btn btn--primary btn--copy form-row__field-action"
+                      data-copy-id=${`username-${e.appId}`}
+                      @click=${() => this.handleCopy(`username-${e.appId}`)}
+                    >
+                      Copy
+                    </button>
                   </div>
 
                   <div class="form-row">
-                    <label for=${`password-${e.appId}`}>Password</label>
-                    <input id=${`password-${e.appId}`} type="password" readonly value=${e.password} />
-                    <button data-copy-button @click=${(evt: InputEvent) => this.handleCopyFromInput(`password-${e.appId}`, evt)}>Copy</button>
+                    <label class="label" for=${`password-${e.appId}`}>Password</label>
+                    <input
+                      class="input input--copy-target"
+                      id=${`password-${e.appId}`}
+                      type="password"
+                      readonly
+                      value=${e.password}
+                      @click=${() => this.handleCopy(`password-${e.appId}`)}
+                    />
+                    <button
+                      class="btn btn--primary btn--copy form-row__field-action"
+                      data-copy-id=${`password-${e.appId}`}
+                      @click=${() => this.handleCopy(`password-${e.appId}`)}
+                    >
+                      Copy
+                    </button>
                   </div>
                 </section>
               </details>
@@ -50,14 +76,16 @@ export class EnvironmentListComponent extends HTMLElement {
     );
   }
 
-  private handleCopyFromInput(id: string, event: InputEvent) {
+  private handleCopy(id: string) {
     const input = this.querySelector(`#${id}`) as HTMLInputElement;
     input?.select();
     navigator.clipboard.writeText(input.value);
-    (event.target as HTMLButtonElement).innerText = "Copied ✔";
+    const copyButtonElement = document.querySelector(`[data-copy-id="${id}"]`) as HTMLButtonElement;
+    copyButtonElement.innerText = "Copied ✔";
+    copyButtonElement.dataset.copied = "";
   }
 
   private resetCopyButtons(evt: InputEvent) {
-    ([...(evt.target as HTMLElement).querySelectorAll("[data-copy-button]")] as HTMLButtonElement[]).forEach((button) => (button.innerText = "Copy"));
+    ([...(evt.target as HTMLElement).querySelectorAll("[data-copy-id]")] as HTMLButtonElement[]).forEach((button) => (button.innerText = "Copy"));
   }
 }

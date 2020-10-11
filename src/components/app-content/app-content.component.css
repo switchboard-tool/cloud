@@ -1,0 +1,24 @@
+.app-content {
+  padding: 1rem;
+}
+
+.app-content__board {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 60rem) {
+  .app-content__board {
+    grid-template-columns: 1fr 30rem;
+  }
+}
+
+.app-content__tips {
+  background-color: white;
+  border-radius: 4px;
+  padding: 1rem 1rem 2rem 2rem;
+  align-self: start;
+  position: sticky;
+  top: calc(48px + 1rem);
+}
