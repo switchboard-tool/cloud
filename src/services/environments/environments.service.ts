@@ -1,7 +1,5 @@
 import { BehaviorSubject } from "rxjs";
-import { filter } from "rxjs/operators";
-import { AuthService } from "../auth/auth.service";
-import { ProxyService } from "../proxy/proxy.service";
+
 export interface Environment {
   appName: string;
   appId: string;
@@ -13,11 +11,14 @@ export interface Environment {
 export class EnvironmentsService {
   environmentsSubject = new BehaviorSubject<Environment[]>([]);
 
-  constructor(private proxyService: ProxyService, private authService: AuthService) {
-    this.authService.authTokenSubject.pipe(filter((token) => token !== null && token.length > 0)).subscribe(async (token) => {
-      const environments: Environment[] = await this.proxyService.get(".netlify/functions/get-environments", token!);
+  constructor() {
+    this.init();
+  }
 
-      this.environmentsSubject.next(environments);
-    });
+  private async init() {
+    const response = await fetch("api/environments");
+    const environments: Environment[] = await response.json();
+
+    this.environmentsSubject.next(environments);
   }
 }

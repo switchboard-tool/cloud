@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "start": "parcel serve ./src/index.html",
+    "start": "parcel serve ./src/*.html",
     "build": "npm run build:app && npm run build:environments",
-    "build:app": "parcel build ./src/index.html",
+    "build:app": "parcel build ./src/*.html",
     "build:environments": "node scripts/copy-environments.js"
   },
   "keywords": [],
