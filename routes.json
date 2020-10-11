@@ -10,11 +10,15 @@
       "allowedRoles": ["member"]
     },
     {
-      "route": "/login",
+      "route": "/sign-in",
       "serve": "/.auth/login/aad"
     },
     {
-      "route": "/logout",
+      "route": "/welcome",
+      "serve": "/welcome.html"
+    },
+    {
+      "route": "/sign-out",
       "serve": "/.auth/logout"
     }
   ],
@@ -22,7 +26,7 @@
     {
       "errorType": "Unauthenticated",
       "statusCode": "302",
-      "serve": "/login"
+      "serve": "/welcome"
     }
   ]
 }
