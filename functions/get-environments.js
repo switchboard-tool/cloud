@@ -1,5 +1,7 @@
 const { default: axios } = require("axios");
 const jwt = require("jsonwebtoken");
+const { Octokit } = require("@octokit/rest");
+const yaml = require('js-yaml');
 
 const ALLOWED_AUD = ["00000003-0000-0000-c000-000000000000", "https://graph.microsoft.com"];
 const REQUIRED_SCOPE = "User.Read";
@@ -20,10 +22,26 @@ exports.handler = async function(event, context, callback) {
   if (ISS !== payload.iss) throw new Error("invalid token");
   if (!publicKeys.some(key => key.kid === kid)) throw new Error("invalid token");
 
+  const octokit = new Octokit({
+    auth: process.env.GITHUB_TOKEN,
+  });
 
-  // your server-side functionality
+  console.log('will get environments from github')
+
+  const environmentsFileResponse = await octokit.repos.getContent({repo: "environments", owner: "switchboard-tool", path: "environments.yaml"})
+  const environments = environmentsFileResponse.data.content;
+
+  const content = Buffer.from(environments, 'base64').toString()
+
+  console.log(content);
+  const contentObject = yaml.safeLoad(content);
+
+
   callback(null, {
     statusCode: 200,
-    body: `token: ${process.env.GITHUB_TOKEN}`
+    headers: {
+      "Content-Type" : "application/json"
+    },
+    body: JSON.stringify(contentObject)
   });
 }
