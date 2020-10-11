@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "allowedRoles": ["member"]
+    },
+    {
+      "route": "/api/environments",
+      "serve": "/environments.json",
+      "allowedRoles": ["member"]
+    },
+    {
+      "route": "/login",
+      "serve": "/.auth/login/aad"
+    },
+    {
+      "route": "/logout",
+      "serve": "/.auth/logout"
+    }
+  ],
+  "platformErrorOverrides": [
+    {
+      "errorType": "Unauthenticated",
+      "statusCode": "302",
+      "serve": "/login"
+    }
+  ]
+}

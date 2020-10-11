@@ -1,0 +1,174 @@
+- appName: Commerce Retail
+  appIcon: D365Icon_Commerce.svg
+  primary: yellow
+  appId: commerce-retail-demo
+  url: https://commercepreview80748761d82576f8aos.cloud.retail.dynamics.com/?t=2020-02-03T19%3A46%3A02.7859435Z&cmp=USRT&mi=EssentialsDashboard
+  decorators: [demo]
+  username: jeff@pmgdemo.onmicrosoft.com
+  password: Dyn@mics365!
+
+- appName: Commerce Site Builder
+  appIcon: D365Icon_Commerce.svg
+  primary: yellow
+  appId: commerce-site-builder-dev
+  url: https://ucxdev.azurewebsites.net/contoso/authoring/sites/MAKMIm/
+  decorators: [dev]
+  username: chusun@rushmoree2etest.onmicrosoft.com
+  password: Emma@play127
+
+- appName: Connected Store
+  appIcon: D365Icon_ConnectedStore.svg
+  primary: red
+  appId: connected-store-dev
+  url: https://mrwdpa.crm.dynamics.com/main.aspx?appid=aaafa8f2-aceb-e911-a844-000d3a375888
+  decorators: [dev]
+  username: sysadmin@mrwdpa.onmicrosoft.com
+  password: C0nt3xt!
+
+- appName: Customer Insights
+  appIcon: D365Icon_CustomerInsights.svg
+  primary: blue
+  appId: customer-insights-demo
+  url: https://home.ci.ai.dynamics.com
+  decorators: [demo]
+  username: jeff@pmgdemo.onmicrosoft.com
+  password: Dyn@mics365!
+
+- appName: Customer Service
+  appIcon: D365Icon_CustomerService.svg
+  primary: purple
+  appId: customer-service-trial
+  url: https://userxdesign-20200914-crm.crm.dynamics.com/main.aspx?appid=2f6d1325-53f6-ea11-a815-000d3a9c7067
+  username: trialuser1@userxdesign.onmicrosoft.com
+  password: T!T@n1137
+
+- appName: Customer Service
+  appIcon: D365Icon_CustomerService.svg
+  primary: purple
+  appId: customer-service-demo
+  url: https://msfielddemo.crm.dynamics.com/main.aspx?appid=ecb6fb78-4602-e811-a95b-000d3a18d1e6
+  decorators: [demo]
+  username: renee@pmgdemo.onmicrosoft.com
+  password: Dyn@mics365!
+
+- appName: Customer Service Insights
+  appIcon: D365Icon_CustomerServiceInsights.svg
+  primary: green
+  appId: customer-service-insights-demo
+  url: https://csi.ai.dynamics.com/signin/
+  decorators: [demo]
+  username: renee@pmgdemo.onmicrosoft.com
+  password: Dyn@mics365!
+
+- appName: Field Service
+  appIcon: D365Icon_FieldService.svg
+  primary: yellow
+  appId: field-service-trial
+  url: https://userxdesign-20200914-crm.crm.dynamics.com/main.aspx?appid=0b326a96-67f6-ea11-a815-000d3a9c7067
+  username: trialuser1@userxdesign.onmicrosoft.com
+  password: T!T@n1137
+
+- appName: Field Service
+  appIcon: D365Icon_FieldService.svg
+  primary: yellow
+  appId: field-service-demo
+  url: https://msfielddemo.crm.dynamics.com/main.aspx?appid=a265e9ff-4818-e911-a9a4-000d3a1a711c
+  decorators: [demo]
+  username: renee@pmgdemo.onmicrosoft.com
+  password: Dyn@mics365!
+
+- appName: Finance
+  appIcon: D365Icon_FinanceStandalone.svg
+  primary: green
+  appId: finance-demo
+  url: https://aka.ms/D365-FIN-SCM
+  decorators: [demo]
+  username: sarah@pmgdemo.onmicrosoft.com
+  password: Dyn@mics365!
+
+- appName: Fraud Protection
+  appIcon: D365Icon_FraudProtection.svg
+  primary: yellow
+  appId: fraud-protection-demo
+  url: https://dfp.microsoft.com/signin
+  decorators: [demo]
+  username: jeffh@dfpdemo3.onmicrosoft.com
+  password: 3ovb8zd6i8=?p&kMHc}n
+
+- appName: Human Resources
+  appIcon: D365Icon_CoreHR.svg
+  primary: purple
+  appId: human-resources-demo
+  url: https://aos-rts-sf-550e5c091f6-prod-westus2.hr.talent.dynamics.com/namespaces/6ab8a4f2-34a5-4751-a52a-a4808ad79e67/?cmp=USMF&mi=DefaultDashboard
+  decorators: [demo]
+  username: jeff@pmgdemo.onmicrosoft.com
+  password: Dyn@mics365!
+
+- appName: Marketing
+  appIcon: D365Icon_Marketing.svg
+  primary: red
+  appId: marketing-trial
+  url: https://userxdesign-20200914-mkt.crm.dynamics.com/main.aspx?appid=ed5e2af1-8ff5-ea11-a815-000d3a1018c9
+  username: trialuser1@userxdesign.onmicrosoft.com
+  password: T!T@n1137
+
+- appName: Marketing
+  appIcon: D365Icon_Marketing.svg
+  primary: red
+  appId: marketing-demo
+  url: https://msfielddemomarketing.crm.dynamics.com/main.aspx?appid=5667ba21-b16a-e811-a955-000d3a1d7d38
+  decorators: [demo]
+  username: jeff@pmgdemo.onmicrosoft.com
+  password: Dyn@mics365!
+
+- appName: Product Insights
+  appIcon: D365Icon_ProductInsights.svg
+  primary: blue
+  appId: product-insights-demo
+  url: https://pi.dynamics.com/
+  decorators: [demo]
+  username: renee@pmgdemo.onmicrosoft.com
+  password: Dyn@mics365!
+
+- appName: Project Service
+  appIcon: D365Icon_ProjectServiceAutomation.svg
+  primary: red
+  appId: project-service-automation-trial
+  url: https://userxdesign-20200914-crm.crm.dynamics.com/main.aspx?appid=fe92aeed-61f6-ea11-a815-000d3a9c7067
+  username: trialuser1@userxdesign.onmicrosoft.com
+  password: T!T@n1137
+
+- appName: Sales
+  appIcon: D365Icon_Sales.svg
+  primary: blue
+  appId: sales-trial
+  url: https://userxdesign-20200914-crm.crm.dynamics.com/main.aspx?appid=1f06c28f-5cf6-ea11-a815-000d3a9c7067
+  username: trialuser1@userxdesign.onmicrosoft.com
+  password: T!T@n1137
+
+- appName: Sales
+  appIcon: D365Icon_Sales.svg
+  primary: blue
+  appId: sales-demo
+  url: https://msfielddemo.crm.dynamics.com/main.aspx?appid=a69a0fac-5902-e811-a95e-000d3a1a7089
+  decorators: [demo]
+  username: jeff@pmgdemo.onmicrosoft.com
+  password: Dyn@mics365!
+
+- appName: Sales Insights
+  appIcon: D365Icon_SalesInsights.svg
+  primary: green
+  appId: sales-insights-demo
+  url: https://sales.ai.dynamics.com
+  decorators: [demo]
+  username: renee@pmgdemo.onmicrosoft.com
+  password: Dyn@mics365!
+
+- appName: Supply Chain Management
+  appIcon: D365Icon_SCM.svg
+  primary: blue
+  appId: supply-chain-management-demo
+  url: https://aka.ms/D365-FIN-SCM
+  decorators: [demo]
+  username: vincent@pmgdemo.onmicrosoft.com
+  password: Dyn@mics365!
