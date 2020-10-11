@@ -1,0 +1,165 @@
+ul.environments {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+
+li {
+  font-weight: 600;
+}
+
+details {
+  font-size: 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+details[open] {
+  border-color: #ccc;
+  background-color: white;
+}
+
+details:hover {
+  border-color: #aaa;
+}
+
+.app-icon {
+  width: 2rem;
+  height: 2rem;
+  background-image: var(--icon-url);
+  background-size: 2rem 2rem;
+  background-repeat: no-repeat;
+  margin-right: 0.5rem;
+}
+
+.environment-form {
+  padding: 0.5rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.environment-url {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+
+  grid-column: 2 / span 2;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 80px minmax(200px, 400px) 80px;
+  height: 2rem;
+  align-items: center;
+}
+
+.form-row > label,
+.form-row > .label {
+  justify-self: end;
+  padding-right: 1rem;
+}
+.form-row > button,
+.form-row > input {
+  align-self: stretch;
+}
+.form-row > input {
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+summary {
+  cursor: pointer;
+  height: 2.5rem;
+  font-size: 1rem;
+  padding: 0.25rem;
+
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  justify-content: start;
+  align-items: center;
+}
+
+[data-app-id="commerce-retail-demo"] {
+  --icon-url: url("/assets/D365Icon_Commerce.svg");
+}
+
+[data-app-id="commerce-site-builder-dev"] {
+  --icon-url: url("/assets/D365Icon_Commerce.svg");
+}
+
+[data-app-id="connected-store-dev"] {
+  --icon-url: url("/assets/D365Icon_ConnectedStore.svg");
+}
+[data-app-id="customer-insights-demo"] {
+  --icon-url: url("/assets/D365Icon_CustomerInsights.svg");
+}
+
+[data-app-id="customer-service-trial"] {
+  --icon-url: url("/assets/D365Icon_CustomerService.svg");
+}
+
+[data-app-id="customer-service-demo"] {
+  --icon-url: url("/assets/D365Icon_CustomerService.svg");
+}
+
+[data-app-id="customer-service-insights-demo"] {
+  --icon-url: url("/assets/D365Icon_CustomerServiceInsights.svg");
+}
+
+[data-app-id="field-service-trial"] {
+  --icon-url: url("/assets/D365Icon_FieldService.svg");
+}
+
+[data-app-id="field-service-demo"] {
+  --icon-url: url("/assets/D365Icon_FieldService.svg");
+}
+
+[data-app-id="finance-demo"] {
+  --icon-url: url("/assets/D365Icon_FinanceStandalone.svg");
+}
+
+[data-app-id="fraud-protection-demo"] {
+  --icon-url: url("/assets/D365Icon_FraudProtection.svg");
+}
+
+[data-app-id="human-resources-demo"] {
+  --icon-url: url("/assets/D365Icon_CoreHR.svg");
+}
+
+[data-app-id="marketing-trial"] {
+  --icon-url: url("/assets/D365Icon_Marketing.svg");
+}
+
+[data-app-id="marketing-demo"] {
+  --icon-url: url("/assets/D365Icon_Marketing.svg");
+}
+
+[data-app-id="product-insights-demo"] {
+  --icon-url: url("/assets/D365Icon_ProductInsights.svg");
+}
+
+[data-app-id="project-service-automation-trial"] {
+  --icon-url: url("/assets/D365Icon_ProjectServiceAutomation.svg");
+}
+
+[data-app-id="sales-trial"] {
+  --icon-url: url("/assets/D365Icon_Sales.svg");
+}
+
+[data-app-id="sales-demo"] {
+  --icon-url: url("/assets/D365Icon_Sales.svg");
+}
+
+[data-app-id="sales-insights-demo"] {
+  --icon-url: url("/assets/D365Icon_SalesInsights.svg");
+}
+
+[data-app-id="supply-chain-management-demo"] {
+  --icon-url: url("/assets/D365Icon_SCM.svg");
+}
