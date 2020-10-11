@@ -45,6 +45,7 @@ details:hover {
   overflow: hidden;
   word-break: break-all;
   text-overflow: ellipsis;
+  font-size: 1rem;
 
   grid-column: 2 / span 2;
 }
@@ -56,9 +57,19 @@ details:hover {
   align-items: center;
 }
 
+.form-row > label,
+.form-row > .label {
+  justify-self: end;
+  padding-right: 1rem;
+}
 .form-row > button,
 .form-row > input {
   align-self: stretch;
+}
+.form-row > input {
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
 }
 
 summary {
