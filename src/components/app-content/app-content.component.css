@@ -22,3 +22,12 @@
   position: sticky;
   top: calc(48px + 1rem);
 }
+
+.app-content__tips > * + * {
+  margin-top: 1rem;
+}
+
+.app-content__tips ol {
+  display: grid;
+  gap: 0.5rem;
+}

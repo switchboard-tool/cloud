@@ -18,7 +18,7 @@ export class EnvironmentListComponent extends HTMLElement {
       html` <ul class="environments">
         ${this.environmentsSubject.value.map((e) => {
           return html`
-            <li data-app-id=${e.appId}>
+            <li class="environment-item" data-app-id=${e.appId}>
               <details class="environment-details" @toggle=${(evt: InputEvent) => this.resetCopyButtons(evt)}>
                 <summary class="environment-summary">
                   <div class="app-icon"></div>
@@ -86,6 +86,9 @@ export class EnvironmentListComponent extends HTMLElement {
   }
 
   private resetCopyButtons(evt: InputEvent) {
-    ([...(evt.target as HTMLElement).querySelectorAll("[data-copy-id]")] as HTMLButtonElement[]).forEach((button) => (button.innerText = "Copy"));
+    ([...(evt.target as HTMLElement).querySelectorAll("[data-copy-id]")] as HTMLButtonElement[]).forEach((button) => {
+      button.innerText = "Copy";
+      delete button.dataset.copied;
+    });
   }
 }

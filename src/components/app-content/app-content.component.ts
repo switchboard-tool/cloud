@@ -21,14 +21,14 @@ export class AppContentComponent extends HTMLElement {
             ? html`
                 <div class="app-content__board">
                   <environment-list></environment-list>
-                  <section class="app-content__tips">
+                  <article class="app-content__tips">
                     <h1>Tips</h1>
                     <ol>
                       <li>Right-click environment URLs to open them in InPrivate window. This prevents browser from using your Microsoft work account.</li>
-                      <li>Close other incognito/private window open before opening an environment.</li>
-                      <li>Open one environment at a time. If you need to view multiple environments, please close the previously opened environment</li>
+                      <li>Close any existing InPrivate windows before opening an environment.</li>
+                      <li>Open one environment at a time. If you need to view multiple environments, please close the previously opened window.</li>
                     </ol>
-                  </section>
+                  </article>
                 </div>
               `
             : ""}

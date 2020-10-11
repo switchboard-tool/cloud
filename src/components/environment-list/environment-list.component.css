@@ -1,11 +1,11 @@
-ul.environments {
+.environments {
   list-style: none;
   padding: 0;
   display: grid;
   gap: 0.25rem;
 }
 
-li {
+.environment-item {
   font-weight: 600;
 }
 
@@ -57,14 +57,14 @@ li {
 
 .form-row {
   display: grid;
-  grid-template-columns: 80px minmax(200px, 400px) auto;
+  grid-template-columns: 72px minmax(200px, 400px) auto;
   height: 2rem;
   align-items: center;
 }
 
 .form-row > .label {
   justify-self: end;
-  padding-right: 1rem;
+  padding-right: 0.5rem;
 }
 .form-row > button,
 .form-row > input {
