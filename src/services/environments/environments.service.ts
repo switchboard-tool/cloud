@@ -16,7 +16,7 @@ export class EnvironmentsService {
   }
 
   private async init() {
-    const response = await fetch("api/environments");
+    const response = await fetch("api/environments.json");
     const environments: Environment[] = await response.json();
 
     this.environmentsSubject.next(environments);

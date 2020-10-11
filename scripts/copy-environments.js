@@ -3,7 +3,7 @@ const path = require('path');
 const yaml = require('js-yaml');
 
 
-const distDir =path.resolve(__dirname, "../dist");
+const distDir =path.resolve(__dirname, "../dist/api");
 const srcPath = path.resolve(__dirname, "../environments.yaml");
 const targetPath = path.join(distDir, "environments.json");
 

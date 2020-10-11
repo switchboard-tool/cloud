@@ -5,8 +5,7 @@
       "allowedRoles": ["member"]
     },
     {
-      "route": "/api/environments",
-      "serve": "/environments.json",
+      "route": "/api/environments.json",
       "allowedRoles": ["member"]
     },
     {
