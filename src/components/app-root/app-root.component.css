@@ -11,6 +11,7 @@ body {
 
 body {
   padding: 0.5rem;
+  background-color: #f3f2f1;
 }
 
 [data-js-focus-visible] :focus:not([data-focus-visible-added]) {

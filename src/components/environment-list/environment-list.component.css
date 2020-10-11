@@ -17,6 +17,7 @@ details {
 
 details[open] {
   border-color: #ccc;
+  background-color: white;
 }
 
 details:hover {
