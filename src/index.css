@@ -66,6 +66,10 @@ ol {
   --btn-background-color-hover: var(--blue-d);
 }
 
+.btn--w120 {
+  width: 120px;
+}
+
 .input {
   height: 32px;
   background-color: var(--input-background-color, white);

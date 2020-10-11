@@ -31,3 +31,18 @@
   display: grid;
   gap: 0.5rem;
 }
+
+.auth-help {
+  animation: 250ms fadeIn;
+  animation-fill-mode: both;
+  animation-delay: 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
