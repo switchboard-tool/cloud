@@ -1,6 +1,7 @@
 import { html, render } from "lit-html";
 import { EnvironmentsService } from "../../services/environments/environments.service";
 import { di } from "../../utils/di";
+import "./environment-list.component.css";
 
 export class EnvironmentListComponent extends HTMLElement {
   environmentsService = di.getSingleton(EnvironmentsService);
@@ -14,32 +15,36 @@ export class EnvironmentListComponent extends HTMLElement {
 
   update() {
     render(
-      html` <ul>
-        ${this.environmentsSubject.value.map(
-          (e) => html`
-            <li>
-              <details>
-                <summary>${e.appName}</summary>
-                <div>
-                  <label for=${`url-${e.appId}`}>URL</label>
-                  <input id=${`url-${e.appId}`} type="url" name readonly value=${e.url} />
-                  <a href=${e.url}>Open (right-click to use private mode)</a>
-                </div>
-                <div>
-                  <label for=${`username-${e.username}`}>Username</label>
-                  <input id=${`username-${e.username}`} type="text" readonly value=${e.username} />
-                  <button>Copy</button>
-                </div>
+      html` <ul class="environments">
+        ${this.environmentsSubject.value.map((e) => {
+          return html`
+            <li data-app-id=${e.appId}>
+              <details class="environment-details">
+                <summary class="environment-summary">
+                  <div class="app-icon"></div>
+                  <div class="app-name">${e.appName}</div>
+                </summary>
+                <section class="environment-form">
+                  <div class="form-row">
+                    <span>URL</span>
+                    <a class="environment-url" href=${e.url}>${e.url}</a>
+                  </div>
+                  <div class="form-row">
+                    <label for=${`username-${e.appId}`}>Username</label>
+                    <input id=${`username-${e.appId}`} type="text" readonly value=${e.username} />
+                    <button>Copy</button>
+                  </div>
 
-                <div>
-                  <label for=${`password-${e.username}`}>Password</label>
-                  <input id=${`password-${e.username}`} type="text" readonly value=${e.password} />
-                  <button>Copy</button>
-                </div>
+                  <div class="form-row">
+                    <label for=${`password-${e.appId}`}>Password</label>
+                    <input id=${`password-${e.appId}`} type="text" readonly value=${e.password} />
+                    <button>Copy</button>
+                  </div>
+                </section>
               </details>
             </li>
-          `
-        )}
+          `;
+        })}
       </ul>`,
       this
     );

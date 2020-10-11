@@ -2,6 +2,7 @@ import { BehaviorSubject } from "rxjs";
 
 export interface Environment {
   appName: string;
+  appIcon: string;
   appId: string;
   url: string;
   username: string;
