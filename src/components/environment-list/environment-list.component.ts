@@ -14,10 +14,33 @@ export class EnvironmentListComponent extends HTMLElement {
 
   update() {
     render(
-      html` <h1>Environments</h1>
-        <ul>
-          ${this.environmentsSubject.value.map((e) => html`<li>${e.appName}</li>`)}
-        </ul>`,
+      html` <ul>
+        ${this.environmentsSubject.value.map(
+          (e) => html`
+            <li>
+              <details>
+                <summary>${e.appName}</summary>
+                <div>
+                  <label for=${`url-${e.appId}`}>URL</label>
+                  <input id=${`url-${e.appId}`} type="url" name readonly value=${e.url} />
+                  <a href=${e.url}>Open (right-click to use private mode)</a>
+                </div>
+                <div>
+                  <label for=${`username-${e.username}`}>Username</label>
+                  <input id=${`username-${e.username}`} type="text" readonly value=${e.username} />
+                  <button>Copy</button>
+                </div>
+
+                <div>
+                  <label for=${`password-${e.username}`}>Password</label>
+                  <input id=${`password-${e.username}`} type="text" readonly value=${e.password} />
+                  <button>Copy</button>
+                </div>
+              </details>
+            </li>
+          `
+        )}
+      </ul>`,
       this
     );
   }
