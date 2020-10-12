@@ -110,80 +110,80 @@ summary {
 }
 
 [data-app-id="commerce-retail-demo"] {
-  --icon-url: url("../../assets/D365Icon_Commerce.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_Commerce.svg");
 }
 
 [data-app-id="commerce-site-builder-dev"] {
-  --icon-url: url("../../assets/D365Icon_Commerce.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_Commerce.svg");
 }
 
 [data-app-id="connected-store-dev"] {
-  --icon-url: url("../../assets/D365Icon_ConnectedStore.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_ConnectedStore.svg");
 }
 [data-app-id="customer-insights-demo"] {
-  --icon-url: url("../../assets/D365Icon_CustomerInsights.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_CustomerInsights.svg");
 }
 
 [data-app-id="customer-service-trial"] {
-  --icon-url: url("../../assets/D365Icon_CustomerService.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_CustomerService.svg");
 }
 
 [data-app-id="customer-service-demo"] {
-  --icon-url: url("../../assets/D365Icon_CustomerService.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_CustomerService.svg");
 }
 
 [data-app-id="customer-service-insights-demo"] {
-  --icon-url: url("../../assets/D365Icon_CustomerServiceInsights.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_CustomerServiceInsights.svg");
 }
 
 [data-app-id="field-service-trial"] {
-  --icon-url: url("../../assets/D365Icon_FieldService.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_FieldService.svg");
 }
 
 [data-app-id="field-service-demo"] {
-  --icon-url: url("../../assets/D365Icon_FieldService.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_FieldService.svg");
 }
 
 [data-app-id="finance-demo"] {
-  --icon-url: url("../../assets/D365Icon_FinanceStandalone.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_FinanceStandalone.svg");
 }
 
 [data-app-id="fraud-protection-demo"] {
-  --icon-url: url("../../assets/D365Icon_FraudProtection.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_FraudProtection.svg");
 }
 
 [data-app-id="human-resources-demo"] {
-  --icon-url: url("../../assets/D365Icon_CoreHR.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_CoreHR.svg");
 }
 
 [data-app-id="marketing-trial"] {
-  --icon-url: url("../../assets/D365Icon_Marketing.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_Marketing.svg");
 }
 
 [data-app-id="marketing-demo"] {
-  --icon-url: url("../../assets/D365Icon_Marketing.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_Marketing.svg");
 }
 
 [data-app-id="product-insights-demo"] {
-  --icon-url: url("../../assets/D365Icon_ProductInsights.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_ProductInsights.svg");
 }
 
 [data-app-id="project-service-automation-trial"] {
-  --icon-url: url("../../assets/D365Icon_ProjectServiceAutomation.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_ProjectServiceAutomation.svg");
 }
 
 [data-app-id="sales-trial"] {
-  --icon-url: url("../../assets/D365Icon_Sales.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_Sales.svg");
 }
 
 [data-app-id="sales-demo"] {
-  --icon-url: url("../../assets/D365Icon_Sales.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_Sales.svg");
 }
 
 [data-app-id="sales-insights-demo"] {
-  --icon-url: url("../../assets/D365Icon_SalesInsights.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_SalesInsights.svg");
 }
 
 [data-app-id="supply-chain-management-demo"] {
-  --icon-url: url("../../assets/D365Icon_SCM.svg");
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_SCM.svg");
 }
