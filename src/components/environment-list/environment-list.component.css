@@ -11,18 +11,30 @@
 
 .environment-details {
   font-size: 0.8rem;
-  border: 1px solid transparent;
   border-radius: 4px;
-  padding-left: 0.25rem;
 }
 
 .environment-details[open] {
-  border-color: #ccc;
   background-color: white;
 }
 
-.environment-details:hover {
-  border-color: #aaa;
+.environment-summary {
+  cursor: pointer;
+  height: 2.5rem;
+  font-size: 1rem;
+  padding: 0.25rem 0.25rem 0.25rem 0.75rem;
+
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  justify-content: start;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.environment-summary:hover {
+  background-color: white;
+  border-color: var(--silver-d);
 }
 
 .app-icon {
@@ -95,18 +107,6 @@
 .app-badge[title]:not([title=""]):hover {
   cursor: help;
   text-decoration: underline dotted;
-}
-
-summary {
-  cursor: pointer;
-  height: 2.5rem;
-  font-size: 1rem;
-  padding: 0.25rem;
-
-  display: grid;
-  grid-template-columns: auto auto 1fr;
-  justify-content: start;
-  align-items: center;
 }
 
 [data-app-id="commerce-retail-demo"] {
