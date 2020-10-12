@@ -25,11 +25,14 @@ export class AppContentComponent extends HTMLElement {
                   <article class="app-content__tips">
                     <h1>Tips</h1>
                     <ol>
+                      <li>The short URL for Switchboard is <a href=${links.switchboardAkaMs}>aka.ms/switchboard</a>.</li>
                       <li>Right-click environment URLs to open them in InPrivate window. This prevents browser from using your Microsoft work account.</li>
                       <li>Close any existing InPrivate windows before opening an environment.</li>
                       <li>Open one environment at a time. If you need to view multiple environments, please close the previously opened window.</li>
-                      <li>Cannot remember the URL? You can use <a href=${links.switchboardAkaMs}>aka.ms/switchboard</a>.</li>
-                      <li>To provide feedback or get help, use <a href=${links.switchboardTeamsGeneralChannel}>Switchboard Teams General channel</a></li>
+                      <li>
+                        Provide feedback or connect with other Switchboard users on
+                        <a href=${links.switchboardTeamsGeneralChannel}>Switchboard Teams channel</a>.
+                      </li>
                     </ol>
                   </article>
                 </div>
