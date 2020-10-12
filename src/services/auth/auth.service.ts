@@ -44,7 +44,7 @@ export class AuthService {
           if (isAutoSignIn) {
             msalClient.acquireTokenRedirect(loginRequest);
           } else {
-            this.authStateSubject.next("signed-out");
+            this.updateAuthState(null);
           }
 
           return;
@@ -60,6 +60,9 @@ export class AuthService {
       }
     } catch (error) {
       console.error(error);
+      // when things go wrong, stop auto sign in just to be safe
+      this.storageService.setAuthSignIn(false);
+
       // TODO notify user;
     }
   }
