@@ -1,10 +1,12 @@
 import { html, render } from "lit-html";
 import { EnvironmentsService } from "../../services/environments/environments.service";
+import { TelemetryService } from "../../services/telemetry/telemetry.service";
 import { di } from "../../utils/di";
 import "./environment-list.component.css";
 
 export class EnvironmentListComponent extends HTMLElement {
   environmentsService = di.getSingleton(EnvironmentsService);
+  telemetryService = di.getSingleton(TelemetryService);
   environmentsSubject = this.environmentsService.environmentsSubject;
 
   #badgeTooltips = new Map([
@@ -47,7 +49,15 @@ export class EnvironmentListComponent extends HTMLElement {
                 <section class="environment-form">
                   <div class="form-row">
                     <span class="label">URL</span>
-                    <a class="environment-url" href=${e.url}>${e.url}</a>
+                    <a
+                      class="environment-url"
+                      target="_blank"
+                      rel="noopener"
+                      href=${e.url}
+                      @contextmenu=${() => this.trackOpenApp(e.appId)}
+                      @click=${() => this.trackOpenApp(e.appId)}
+                      >${e.url}</a
+                    >
                   </div>
                   <div class="form-row">
                     <label class="label" for=${`username-${e.appId}`}>Username</label>
@@ -118,5 +128,9 @@ export class EnvironmentListComponent extends HTMLElement {
 
   private getDecoratorDisplayText(key: string) {
     return this.#badgeTooltips.has(key) ? this.#badgeTooltips.get(key)?.[0] : key.toLocaleUpperCase();
+  }
+
+  private trackOpenApp(appId: string) {
+    return this.telemetryService.trackEvent({ name: "open-app" }, { appId });
   }
 }
