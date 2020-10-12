@@ -1,6 +1,7 @@
 import { AuthenticationResult, InteractionRequiredAuthError, SilentRequest } from "@azure/msal-browser";
 import { BehaviorSubject } from "rxjs";
 import { StorageService } from "../storage/storage.service";
+import { TelemetryService } from "../telemetry/telemetry.service";
 import { loginRequest, msalClient, tokenRequest } from "./msal-client";
 
 export type AuthState = "signed-in" | "signed-out" | "unknown";
@@ -9,7 +10,7 @@ export class AuthService {
   authTokenSubject = new BehaviorSubject<string | null>(null);
   authStateSubject = new BehaviorSubject<AuthState>("unknown");
 
-  constructor(private storageService: StorageService) {}
+  constructor(private storageService: StorageService, private telemetryService: TelemetryService) {}
 
   signIn() {
     // when user manually sign in, enable auto sign-in on start the next time
@@ -71,6 +72,7 @@ export class AuthService {
     if (tokenResult) {
       this.authStateSubject.next("signed-in");
       this.authTokenSubject.next(tokenResult.accessToken);
+      this.telemetryService.setAuthenticatedUserId(tokenResult.account.username || "unknown");
     } else {
       this.authStateSubject.next("signed-out");
     }

@@ -10,7 +10,7 @@ import { di } from "./utils/di";
 
 di.registerClass(TelemetryService, []);
 di.registerClass(StorageService, []);
-di.registerClass(AuthService, [StorageService]);
+di.registerClass(AuthService, [StorageService, TelemetryService]);
 di.registerClass(ProxyService, []);
 di.registerClass(EnvironmentsService, [ProxyService, AuthService, TelemetryService]);
 

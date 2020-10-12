@@ -12,6 +12,10 @@ export class TelemetryService {
     this.appInsights.trackPageView();
   }
 
+  setAuthenticatedUserId(id: string) {
+    this.appInsights.setAuthenticatedUserContext(id);
+  }
+
   trackEvent(...args: Parameters<IApplicationInsights["trackEvent"]>) {
     const [event, customProperties] = args;
     const finalCustomProperties = { ...customProperties, host: location.host };
