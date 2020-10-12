@@ -8,6 +8,7 @@ export interface Environment {
   url: string;
   username: string;
   password: string;
+  decorators: string[];
 }
 
 export class EnvironmentsService {

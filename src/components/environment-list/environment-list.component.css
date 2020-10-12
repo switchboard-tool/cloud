@@ -87,6 +87,16 @@
   --btn-background-color-hover: var(--success);
 }
 
+.app-badge {
+  color: var(--badge-color);
+  font-size: 12px;
+  font-weight: 600;
+}
+.app-badge[title]:not([title=""]):hover {
+  cursor: help;
+  text-decoration: underline dotted;
+}
+
 summary {
   cursor: pointer;
   height: 2.5rem;

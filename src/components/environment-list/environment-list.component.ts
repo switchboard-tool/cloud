@@ -7,6 +7,12 @@ export class EnvironmentListComponent extends HTMLElement {
   environmentsService = di.getSingleton(EnvironmentsService);
   environmentsSubject = this.environmentsService.environmentsSubject;
 
+  #badgeTooltips = new Map([
+    ["demo", ["DEMO", "Demo environments come with customizations and extensions. They showcase possibilities to customers."]],
+    ["dev", ["DEV", "Dev environments come with bugs and experiments. They help developement and testing."]],
+    ["viewonly", ["VIEW-ONLY", "Changes in this environment may break other people's work. Please don't make changes even if you can."]],
+  ]);
+
   connectedCallback() {
     this.update();
 
@@ -22,7 +28,21 @@ export class EnvironmentListComponent extends HTMLElement {
               <details class="environment-details" @toggle=${(evt: InputEvent) => this.resetCopyButtons(evt)}>
                 <summary class="environment-summary">
                   <div class="app-icon"></div>
-                  <div class="app-name">${e.appName}</div>
+                  <div class="app-name">
+                    ${e.appName}${e.decorators
+                      ? html`
+                          <sup class="app-badge-list"
+                            >${e.decorators.map(
+                              (decorator, index) =>
+                                html`
+                                  ${index > 0 ? html` <span>·</span> ` : null}
+                                  <span class="app-badge" title="${this.getDecoratorTooltip(decorator)}">${this.getDecoratorDisplayText(decorator)}</span>
+                                `
+                            )}</sup
+                          >
+                        `
+                      : null}
+                  </div>
                 </summary>
                 <section class="environment-form">
                   <div class="form-row">
@@ -90,5 +110,13 @@ export class EnvironmentListComponent extends HTMLElement {
       button.innerText = "Copy";
       delete button.dataset.copied;
     });
+  }
+
+  private getDecoratorTooltip(key: string) {
+    return this.#badgeTooltips.has(key) ? this.#badgeTooltips.get(key)?.[1] : "";
+  }
+
+  private getDecoratorDisplayText(key: string) {
+    return this.#badgeTooltips.has(key) ? this.#badgeTooltips.get(key)?.[0] : key.toLocaleUpperCase();
   }
 }
