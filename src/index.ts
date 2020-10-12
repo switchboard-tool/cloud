@@ -12,7 +12,7 @@ di.registerClass(TelemetryService, []);
 di.registerClass(StorageService, []);
 di.registerClass(AuthService, [StorageService, TelemetryService]);
 di.registerClass(ProxyService, []);
-di.registerClass(EnvironmentsService, [ProxyService, AuthService, TelemetryService]);
+di.registerClass(EnvironmentsService, [ProxyService, AuthService, TelemetryService, StorageService]);
 
 customElements.define("app-content", AppContentComponent);
 customElements.define("app-header", AppHeaderComponent);

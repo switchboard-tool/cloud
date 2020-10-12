@@ -14,13 +14,13 @@ export class AuthService {
 
   signIn() {
     // when user manually sign in, enable auto sign-in on start the next time
-    this.storageService.setAuthSignIn(true);
+    this.storageService.setAutoSignIn(true);
     msalClient.acquireTokenRedirect(loginRequest);
   }
 
   signOut() {
-    // when user manually sign out, disable auto sign-in on start the next time
-    this.storageService.setAuthSignIn(false);
+    // when user manually sign out, forget all local storage items
+    this.storageService.resetLocalState();
     msalClient.logout();
   }
 
@@ -61,9 +61,8 @@ export class AuthService {
       }
     } catch (error) {
       console.error(error);
-      // when things go wrong, stop auto sign in just to be safe
-      this.storageService.setAuthSignIn(false);
-
+      // when things go wrong, reset local state just to be safe
+      this.storageService.resetLocalState();
       // TODO notify user;
     }
   }
