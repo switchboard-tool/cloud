@@ -24,16 +24,18 @@ exports.handler = async function(event, context, callback) {
   const environmentsFileResponse = await octokit.repos.getContent({repo: "environments", owner: "switchboard-tool", path: "environments.yaml"})
   const environments = environmentsFileResponse.data.content;
 
-  const content = Buffer.from(environments, 'base64').toString()
+  const timestamp = (new Date(environmentsFileResponse.headers["last-modified"]).toISOString());
+
+  const content = Buffer.from(environments, 'base64').toString();
   const contentObject = yaml.safeLoad(content);
 
-  console.log(`received ${contentObject.length} environments`);
+  console.log(`received ${contentObject.length} environments, last modified: ${timestamp}`);
 
   callback(null, {
     statusCode: 200,
     headers: {
       "Content-Type" : "application/json",
-      "Cache-Control": "private, max-age=43200, must-revalidate" // environments are cached for 12 hours
+      "Last-Modified": timestamp,
     },
     body: JSON.stringify(contentObject)
   });
