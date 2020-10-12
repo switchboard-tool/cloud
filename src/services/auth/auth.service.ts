@@ -32,7 +32,10 @@ export class AuthService {
          */
         const currentAccounts = msalClient.getAllAccounts();
         if (currentAccounts === null || !currentAccounts.length) {
-          this.authStateSubject.next("signed-out");
+          // this.authStateSubject.next("signed-out");
+
+          // if user is signed out, attempt auto sign-in
+          msalClient.acquireTokenRedirect(loginRequest);
           return;
         } else if (currentAccounts.length > 1) {
           // Add choose account code here

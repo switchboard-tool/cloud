@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "dev": "netlify dev",
-    "start": "parcel serve ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "start": "parcel serve ./src/*.html",
+    "build": "parcel build ./src/*.html"
   },
   "keywords": [],
   "author": "Chuanqi Sun",
