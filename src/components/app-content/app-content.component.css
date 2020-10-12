@@ -14,6 +14,14 @@
   }
 }
 
+.app-content__sign-in {
+  padding-left: 1rem;
+}
+
+.app-content__authentication {
+  padding-left: 1rem;
+}
+
 .app-content__tips {
   background-color: white;
   border-radius: 4px;

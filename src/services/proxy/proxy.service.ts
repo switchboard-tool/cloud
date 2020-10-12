@@ -1,6 +1,4 @@
 export class ProxyService {
-  constructor() {}
-
   async get(endpoint: string, token: string) {
     const headers = new Headers();
     const bearer = `Bearer ${token}`;

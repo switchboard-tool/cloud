@@ -1,5 +1,6 @@
 import { AuthenticationResult, InteractionRequiredAuthError, SilentRequest } from "@azure/msal-browser";
 import { BehaviorSubject } from "rxjs";
+import { StorageService } from "../storage/storage.service";
 import { loginRequest, msalClient, tokenRequest } from "./msal-client";
 
 export type AuthState = "signed-in" | "signed-out" | "unknown";
@@ -8,11 +9,17 @@ export class AuthService {
   authTokenSubject = new BehaviorSubject<string | null>(null);
   authStateSubject = new BehaviorSubject<AuthState>("unknown");
 
+  constructor(private storageService: StorageService) {}
+
   signIn() {
+    // when user manually sign in, enable auto sign-in on start the next time
+    this.storageService.setAuthSignIn(true);
     msalClient.acquireTokenRedirect(loginRequest);
   }
 
   signOut() {
+    // when user manually sign out, disable auto sign-in on start the next time
+    this.storageService.setAuthSignIn(false);
     msalClient.logout();
   }
 
@@ -32,10 +39,14 @@ export class AuthService {
          */
         const currentAccounts = msalClient.getAllAccounts();
         if (currentAccounts === null || !currentAccounts.length) {
-          // this.authStateSubject.next("signed-out");
+          const isAutoSignIn = this.storageService.getAutoSignIn();
 
-          // if user is signed out, attempt auto sign-in
-          msalClient.acquireTokenRedirect(loginRequest);
+          if (isAutoSignIn) {
+            msalClient.acquireTokenRedirect(loginRequest);
+          } else {
+            this.authStateSubject.next("signed-out");
+          }
+
           return;
         } else if (currentAccounts.length > 1) {
           // Add choose account code here

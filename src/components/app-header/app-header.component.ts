@@ -15,9 +15,7 @@ export class AppHeaderComponent extends HTMLElement {
     render(
       html`<header class="app-header">
         <div class="app-header__app-name">Switchboard</div>
-        ${this.authService.authStateSubject.value === "signed-in"
-          ? html`<button class="btn" @click=${this.authService.signOut}>Sign out</button>`
-          : ""}
+        ${this.authService.authStateSubject.value === "signed-in" ? html`<button class="btn" @click=${() => this.authService.signOut()}>Sign out</button>` : ""}
       </header>`,
       this
     );
