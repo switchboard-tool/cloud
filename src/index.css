@@ -29,6 +29,16 @@ body {
   outline: none;
 }
 
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--blue-d);
+  text-decoration: underline;
+}
+
 h1,
 h2,
 h3,
