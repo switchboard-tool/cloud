@@ -5,3 +5,5 @@ Architecture notes
 3. When the environments file in Github is modified, we trigger a netlify build to update the timestamp in the output html
    1. On Netlify we expose a build webhook (https://app.netlify.com/sites/switchboard-app/settings/deploys#build-hooks)
    2. On Github, subscribe push event and call the build webhook (https://github.com/switchboard-tool/environments/settings/hooks)
+
+During build time we need to set GITHUB_TOKEN and NODE_VERSION in Netlify
