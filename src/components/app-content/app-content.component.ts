@@ -25,6 +25,7 @@ export class AppContentComponent extends HTMLElement {
                   <article class="app-content__tips">
                     <h1>Tips</h1>
                     <ol>
+                      <li>Switchboard is optimized for Microsoft Edge browser</li>
                       <li>The short URL for Switchboard is <a href=${links.switchboardAkaMs}>aka.ms/switchboard</a>.</li>
                       <li>Right-click environment URLs to open them in InPrivate window. This prevents browser from using your Microsoft work account.</li>
                       <li>Close any existing InPrivate windows before opening an environment.</li>
