@@ -66,7 +66,7 @@ export class EnvironmentListComponent extends HTMLElement {
                       id=${`username-${e.appId}`}
                       type="text"
                       readonly
-                      value=${e.username}
+                      .value=${e.username}
                       @click=${() => this.handleCopy(`username-${e.appId}`)}
                     />
                     <button
@@ -85,7 +85,7 @@ export class EnvironmentListComponent extends HTMLElement {
                       id=${`password-${e.appId}`}
                       type="password"
                       readonly
-                      value=${e.password}
+                      .value=${e.password}
                       @click=${() => this.handleCopy(`password-${e.appId}`)}
                     />
                     <button
