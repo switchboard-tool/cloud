@@ -1,5 +1,5 @@
 {
-  "name": "@switchboard/browser",
+  "name": "@switchboard/cloud",
   "version": "0.0.2",
   "description": "",
   "scripts": {
@@ -10,6 +10,7 @@
   "keywords": [],
   "author": "Chuanqi Sun",
   "license": "MIT",
+  "repository": "https://github.com/switchboard-tool/cloud",
   "devDependencies": {
     "@azure/msal-browser": "^2.3.0",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
