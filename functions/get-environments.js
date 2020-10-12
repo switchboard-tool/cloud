@@ -40,7 +40,8 @@ exports.handler = async function(event, context, callback) {
   callback(null, {
     statusCode: 200,
     headers: {
-      "Content-Type" : "application/json"
+      "Content-Type" : "application/json",
+      "Cache-Control": "private, max-age=43200, must-revalidate" // environments are cached for 12 hours
     },
     body: JSON.stringify(contentObject)
   });
