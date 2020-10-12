@@ -36,11 +36,11 @@ export class AppContentComponent extends HTMLElement {
               `
             : ""}
           ${this.authService.authStateSubject.value === "unknown"
-            ? html`<div class="app-content__authentication">
-                <p aria-live="polite">Authenticating…</p>
+            ? html`<div class="app-content__authentication" aria-live="polite">
+                <p>Authenticating…</p>
                 <article class="auth-help">
                   <p>
-                    Did you encounter issue signing in? <a href=${`${location.protocol}//${location.host}`}>Click here to start over</a> or report the issue in
+                    Was there an issue signing in? <a href=${`${location.protocol}//${location.host}`}>Click here to start over</a> or get help from
                     <a href=${links.switchboardTeamsGeneralChannel}>Switchboard Teams General channel</a>.
                   </p>
                 </article>
