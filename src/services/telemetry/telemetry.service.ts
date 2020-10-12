@@ -13,12 +13,14 @@ export class TelemetryService {
   }
 
   trackEvent(...args: Parameters<IApplicationInsights["trackEvent"]>) {
-    this.appInsights.trackEvent(...args);
-    // console.log("[analytics] event", ...args);
+    const [event, customProperties] = args;
+    const finalCustomProperties = { ...customProperties, host: location.host };
+    this.appInsights.trackEvent(event, finalCustomProperties);
   }
 
   trackMetric(...args: Parameters<IApplicationInsights["trackMetric"]>) {
-    this.appInsights.trackMetric(...args);
-    // console.log("[analytics] metrics", ...args);
+    const [event, customProperties] = args;
+    const finalCustomProperties = { ...customProperties, host: location.host };
+    this.appInsights.trackMetric(event, finalCustomProperties);
   }
 }
