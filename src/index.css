@@ -22,6 +22,7 @@ body {
 }
 
 body {
+  overflow-y: scroll; /* we are confident that it will overflow. Show scroll bar to reduce layout shift */
   background-color: var(--silver);
 }
 
