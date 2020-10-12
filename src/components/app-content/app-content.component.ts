@@ -25,14 +25,13 @@ export class AppContentComponent extends HTMLElement {
                   <article class="app-content__tips">
                     <h1>Tips</h1>
                     <ol>
-                      <li>To keep credentials secure, use Switchboard with <a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a>.</li>
-                      <li>The short URL for Switchboard is <a href=${links.switchboardAkaMs}>aka.ms/switchboard</a>.</li>
-                      <li>Right-click environment URLs to open them in InPrivate window. This prevents browser from using your Microsoft work account.</li>
-                      <li>Close any existing InPrivate windows before opening an environment.</li>
-                      <li>Open one environment at a time. If you need to view multiple environments, please close the previously opened window.</li>
+                      <li>Use <a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a> to protect demo credentials.</li>
+                      <li>Right-click on URL to open apps in InPrivate window.</li>
+                      <li>Close previously opened apps before opening a new one.</li>
+                      <li>Share Switchboard by its short URL: <a href=${links.switchboardAkaMs}>aka.ms/switchboard</a>.</li>
                       <li>
-                        Provide feedback or connect with other Switchboard users on
-                        <a href=${links.switchboardTeamsGeneralChannel}>Switchboard Teams channel</a>.
+                        Provide feedback and get help on
+                        <a href=${links.switchboardTeamsGeneralChannel}>Microsoft Teams</a>.
                       </li>
                     </ol>
                   </article>
@@ -52,7 +51,8 @@ export class AppContentComponent extends HTMLElement {
             : ""}
           ${this.authService.authStateSubject.value === "signed-out"
             ? html` <div class="app-content__sign-in">
-                <p>Sign in with Microsoft work account to view environments.</p>
+                <p>Switchboard provides instant access to demo apps from Microsoft Business Application Group.</p>
+                <p>Sign in with your Microsoft work account to continue.</p>
                 <button class="btn btn--primary btn--w120" @click=${() => this.authService.signIn()}>Sign in</button>
               </div>`
             : ""}
