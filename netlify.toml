@@ -1,2 +1,6 @@
 [build]
   functions = "functions"
+
+[[plugins]]
+package = "./plugins/set-environments-timestamp"
+

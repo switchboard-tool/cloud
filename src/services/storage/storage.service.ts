@@ -1,12 +1,12 @@
 import { Environment } from "../environments/environments.service";
 
 const FLAG_AUTO_SIGN_IN = "switchboard:auto-sign-in";
-const FLAG_LOCAL_ENVIRONMENTS = "switchboard:local-environments";
+const FLAG_ENVIRONMENTS = "switchboard:environments";
+const FLAG_ENVIRONMENTS_LAST_MODIFIED = "switchboard:environments-last-modified";
 
 export class StorageService {
   resetLocalState() {
-    this.setAutoSignIn(false);
-    this.setLocalEnvironments(null);
+    localStorage.clear();
   }
 
   getAutoSignIn(): boolean {
@@ -23,17 +23,30 @@ export class StorageService {
     }
   }
 
-  getLocalEnvironments(): Environment[] | null {
-    const environmentsString = localStorage.getItem(FLAG_LOCAL_ENVIRONMENTS);
+  getEnvironments(): Environment[] | null {
+    const environmentsString = localStorage.getItem(FLAG_ENVIRONMENTS);
 
-    return storageSstringToEnvironments(environmentsString);
+    return storageStringToEnvironments(environmentsString);
   }
 
-  setLocalEnvironments(environments: Environment[] | null) {
+  setEnvironments(environments: Environment[] | null) {
     if (environments === null) {
-      localStorage.removeItem(FLAG_LOCAL_ENVIRONMENTS);
+      localStorage.removeItem(FLAG_ENVIRONMENTS);
     } else {
-      localStorage.setItem(FLAG_LOCAL_ENVIRONMENTS, JSON.stringify(environments));
+      localStorage.setItem(FLAG_ENVIRONMENTS, JSON.stringify(environments));
+    }
+  }
+
+  getEnvironmentsLastModified(): string | null {
+    const timestampString = localStorage.getItem(FLAG_ENVIRONMENTS_LAST_MODIFIED);
+    return timestampString;
+  }
+
+  setEnvironmentsLastModified(timestamp: string | null) {
+    if (timestamp === null) {
+      localStorage.remove(FLAG_ENVIRONMENTS_LAST_MODIFIED);
+    } else {
+      localStorage.setItem(FLAG_ENVIRONMENTS_LAST_MODIFIED, timestamp);
     }
   }
 }
@@ -46,7 +59,7 @@ function storageStringToBoolean(input: string | null): boolean {
   return false;
 }
 
-function storageSstringToEnvironments(input: string | null): Environment[] | null {
+function storageStringToEnvironments(input: string | null): Environment[] | null {
   if (input === null) return null;
 
   try {
