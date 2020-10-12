@@ -4,3 +4,15 @@
 [[plugins]]
 package = "./plugins/set-environments-timestamp"
 
+[[headers]]
+  for = "*.*.js" # cache hashed assets for 10 years
+  [headers.values]
+    cache-control = "public, max-age=315360000, immutable"
+[[headers]]
+  for = "*.*.css"
+  [headers.values]
+    cache-control = "public, max-age=315360000, immutable"
+[[headers]]
+  for = "*.*.ico"
+  [headers.values]
+    cache-control = "public, max-age=315360000, immutable"
