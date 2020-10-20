@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e0daa35a-8356-4e03-b337-7ce79b55a758/deploy-status)](https://app.netlify.com/sites/switchboard-cloud/deploys)
+
 Architecture notes
 
 1. During build time, request environments file from Github and we put its last modified timestamp the output html (with posthtml expression)
