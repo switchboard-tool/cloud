@@ -30,8 +30,7 @@ export class AppContentComponent extends HTMLElement {
                       <li>Close previously opened apps before opening a new one.</li>
                       <li>Share Switchboard by its short URL: <a href=${links.switchboardAkaMs}>aka.ms/switchboard</a>.</li>
                       <li>
-                        Provide feedback and get help on
-                        <a href=${links.switchboardTeamsGeneralChannel}>Microsoft Teams</a>.
+                        Join our <a href=${links.switchboardTeamsGeneralChannel}>Teams community</a> for help and feedback.
                       </li>
                     </ol>
                   </article>
