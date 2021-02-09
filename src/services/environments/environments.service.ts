@@ -24,9 +24,9 @@ export class EnvironmentsService {
     private storageService: StorageService,
     private metaService: MetaService
   ) {
-    this.restoreLocalEnvironments();
+    const restoredEnvironments = this.restoreLocalEnvironments();
 
-    if (this.isRemoteEnvironmentsRequired()) {
+    if (!restoredEnvironments || this.isRemoteEnvironmentsRequired()) {
       this.getRemoteEnvironments();
     }
   }
@@ -54,11 +54,16 @@ export class EnvironmentsService {
     return false;
   }
 
+  /**
+   * @return the restored environments. If restore failed, null will be returned
+   */
   private restoreLocalEnvironments() {
     const environments = this.storageService.getEnvironments();
     if (environments) {
       this.environmentsSubject.next(environments);
     }
+
+    return environments;
   }
 
   private getRemoteEnvironments() {
