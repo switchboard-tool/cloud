@@ -56,7 +56,7 @@ export class EnvironmentListComponent extends HTMLElement {
                       href=${e.url}
                       @contextmenu=${() => this.trackOpenApp(e.appId)}
                       @click=${() => this.trackOpenApp(e.appId)}
-                      >${e.url}</a
+                      >Right click > Open link in InPrivate window</a
                     >
                   </div>
                   <div class="form-row">
