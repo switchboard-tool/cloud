@@ -50,7 +50,7 @@ export class AppContentComponent extends HTMLElement {
             : ""}
           ${this.authService.authStateSubject.value === "signed-out"
             ? html` <div class="app-content__sign-in">
-                <p>Switchboard provides instant access to demo apps from Microsoft Business Application Group.</p>
+                <p>Switchboard provides instant access to demo apps from Microsoft Digital Transformation Platform (DTP).</p>
                 <p>Sign in with your Microsoft work account to continue.</p>
                 <button class="btn btn--primary btn--w120" @click=${() => this.authService.signIn()}>Sign in</button>
               </div>`
