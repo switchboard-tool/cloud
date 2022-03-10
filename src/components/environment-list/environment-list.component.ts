@@ -1,4 +1,4 @@
-import { html, render } from "lit-html";
+import { html, render } from "lit";
 import { EnvironmentsService } from "../../services/environments/environments.service";
 import { TelemetryService } from "../../services/telemetry/telemetry.service";
 import { di } from "../../utils/di";

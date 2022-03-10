@@ -1,4 +1,4 @@
-import { html, render } from "lit-html";
+import { html, render } from "lit";
 import { AuthService } from "../../services/auth/auth.service";
 import { di } from "../../utils/di";
 import "./app-header.component.css";
