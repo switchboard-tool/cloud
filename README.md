@@ -2,7 +2,7 @@
 
 # Local dev workflow
 
-1. (One-time) Login `netlify loging`.
+1. (One-time) Login `netlify login`.
 2. (One-time) Get environment from Netlify `netlify link`.
 3. `npm run dev`
 
