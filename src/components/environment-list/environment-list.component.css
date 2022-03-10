@@ -184,6 +184,10 @@
   --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_SalesInsights.svg");
 }
 
+[data-app-id="supply-chain-insights-trial"] {
+  --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_SCI.svg");
+}
+
 [data-app-id="supply-chain-management-demo"] {
   --icon-url: url("https://switchboard-assets.netlify.app/product-icons/D365Icon_SCM.svg");
 }
