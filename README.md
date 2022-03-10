@@ -15,3 +15,7 @@
    2. On Github, subscribe push event and call the build webhook (https://github.com/switchboard-tool/environments/settings/hooks)
 
 During build time we need to set GITHUB_TOKEN and NODE_VERSION in Netlify
+
+# Logo assets
+
+Managed separated in https://github.com/switchboard-tool/assets
