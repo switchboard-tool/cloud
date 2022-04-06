@@ -4,6 +4,8 @@ import { TelemetryService } from "../../services/telemetry/telemetry.service";
 import { di } from "../../utils/di";
 import "./environment-list.component.css";
 
+const iconUrlPrefix = `https://switchboard-assets.netlify.app/product-icons`;
+
 export class EnvironmentListComponent extends HTMLElement {
   environmentsService = di.getSingleton(EnvironmentsService);
   telemetryService = di.getSingleton(TelemetryService);
@@ -26,7 +28,7 @@ export class EnvironmentListComponent extends HTMLElement {
       html` <ul class="environments">
         ${this.environmentsSubject.value.map((e) => {
           return html`
-            <li class="environment-item" data-app-id=${e.appId}>
+            <li class="environment-item" style=${`--icon-url:url("${iconUrlPrefix}/${e.appIcon}")`}>
               <details class="environment-details" @toggle=${(evt: InputEvent) => this.resetCopyButtons(evt)}>
                 <summary class="environment-summary">
                   <div class="app-icon"></div>

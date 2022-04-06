@@ -8,6 +8,7 @@ import { TelemetryService } from "../telemetry/telemetry.service";
 export interface Environment {
   appName: string;
   appId: string;
+  appIcon: string;
   url: string;
   username: string;
   password: string;
