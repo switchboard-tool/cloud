@@ -113,7 +113,7 @@ export class EnvironmentListComponent extends HTMLElement {
     input?.select();
     navigator.clipboard.writeText(input.value);
     const copyButtonElement = document.querySelector(`[data-copy-id="${id}"]`) as HTMLButtonElement;
-    copyButtonElement.innerText = "Copied ✔";
+    copyButtonElement.innerText = "✔ Copied";
     copyButtonElement.dataset.copied = "";
   }
 
