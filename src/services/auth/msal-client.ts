@@ -3,7 +3,7 @@ import { PublicClientApplication, LogLevel } from "@azure/msal-browser";
 // Config object to be passed to Msal on creation
 export const msalConfig = {
   auth: {
-    clientId: "1016c96b-4261-4118-9cd8-f2202ab3b28b",
+    clientId: "1076b242-f01e-42de-bf8d-9c2807e1196d",
     authority: "https://login.microsoftonline.com/common",
     redirectUri: `${location.protocol}//${location.host}`,
   },
